@@ -59,3 +59,80 @@ This dataset is used in the project to reconstruct individual customer water and
  sewer_meter_size5: Fixed sewer meter charge for a 2-inch meter.        
  duval_county_tax_rate_water: Applicable Duval County tax rate for water service. 
  duval_county_tax_rate_sewer: Applicable Duval County tax rate for sewer service. 
+
+data/raw/dewey/dewey_jea_service_area.dta: 
+This dataset contains parcel-level property assessment and housing characteristic data for properties located in the Florida counties served entirely or in part by JEA: Duval, Clay, St. Johns, and Nassau. The data come from Dewey property records and reflect property assessment, ownership, tax, sale, and structural characteristics from year XXXX.
+
+This dataset is used in the project to obtain key property and household-relevant characteristics for the JEA sample. These include location, market value, assessed value, tax burden, tax delinquency, owner occupancy, exemptions, housing size, housing age, HVAC characteristics, and amenities. County is identified using SITUSSTATECOUNTYFIPS. 
+
+LATITUDE: Latitude of the property location.                                            
+LONGITUDE: Longitude of the property location.                                                  
+PROPERTYADDRESSFULL: Full property situs address.                                                                    
+PROPERTYADDRESSCITY: City from the property address.                                                      
+PROPERTYADDRESSSTATE: State from the property address.                                                     
+PROPERTYADDRESSZIP: ZIP code from the property address.                                                  
+PROPERTYADDRESSZIP4: ZIP+4 extension from the property address.                                           
+SITUSSTATECOUNTYFIPS: State and county FIPS code for the property location.                                           
+CENSUSTRACT: Census tract identifier associated with the property location.                                  
+CENSUSBLOCKGROUP: Census block group identifier associated with the property location.                            
+CENSUSBLOCK: Census block identifier associated with the property location.                                  
+TAXMARKETVALUETOTAL: Total market value of the property for tax assessment purposes.                       
+TAXASSESSEDVALUETOTAL: Total assessed value of the property for tax purposes.                                          
+TAXBILLEDAMOUNT: Total property tax amount billed.                                                               
+TAXDELINQUENTYEAR: Year associated with property tax delinquency, if any.                                          
+TAXFISCALYEAR: Fiscal year associated with the tax record.                                                     
+TAXYEARASSESSED: Year in which the property was assessed for tax purposes.                                       
+TAXMARKETVALUEYEAR: Year associated with the reported market value.                                                 
+TAXRATEAREA: Tax rate area or jurisdiction code associated with the property.                                
+TAXEXEMPTIONHOMEOWNERFLAG: Indicator for whether the property has a homeowner exemption.                                   
+TAXEXEMPTIONSENIORFLAG: Indicator for whether the property has a senior exemption.                                      
+TAXEXEMPTIONVETERANFLAG: Indicator for whether the property has a veteran exemption.                                     
+TAXEXEMPTIONDISABLEDFLAG: Indicator for whether the property has a disability exemption.                          
+TAXEXEMPTIONWIDOWFLAG: Indicator for whether the property has a widow exemption.                            
+STATUSOWNEROCUPIEDFLAG: Indicator for whether the property is classified as owner-occupied.                             
+OWNERTYPEDESCRIPTION1: Description of the owner type, such as individual, company, trust, or other ownership category. 
+OWNERSHIPVESTINGRELATIONCODE: Code describing the legal ownership or vesting relationship.                                    
+COMPANYFLAG: Indicator for whether the owner appears to be a company or business entity.                     
+CONTACTOWNERMAILADDRESSFULL: Full mailing address for the property owner.                                                    
+AREABUILDING: Building area, typically measured in square feet.                                               
+AREAGROSS: Gross building area, typically measured in square feet.                                         
+AREA1STFLOOR: Area of the first floor of the structure.                                                       
+AREA2NDFLOOR: Area of the second floor of the structure.                                                      
+AREAUPPERFLOORS: Area of upper floors beyond the first floor.                                                    
+BUILDINGCOUNT: Number of buildings or structures associated with the property.                                 
+UNITSCOUNT: Number of residential or property units associated with the parcel.                             
+BEDROOMSCOUNT: Number of bedrooms reported for the property.                                                   
+BATHCOUNT: Number of bathrooms reported for the property.                                                  
+BATHPARTIALCOUNT: Number of partial bathrooms reported for the property.                                          
+ROOMSCOUNT: Total number of rooms reported for the property.                                                
+STORIESCOUNT: Number of stories or floors in the structure.                                                   
+YEARBUILT: Year the structure was originally built.                                                        
+YEARBUILTEFFECTIVE: Effective year built, which may reflect major renovations or updates.                           
+STRUCTURESTYLE: Coded or text description of the structure style.                                               
+CONSTRUCTION: Coded or text description of the construction type.                                             
+FOUNDATION: Coded or text description of the foundation type.                                               
+ROOFMATERIAL: Coded or text description of the roof material.                                                 
+ROOFCONSTRUCTION: Coded or text description of roof construction.                                                 
+HVACCOOLINGDETAIL: Coded description of the cooling system or air conditioning type.                               
+HVACHEATINGDETAIL: Coded description of the heating system type.                                                   
+HVACHEATINGFUEL: Coded description of the heating fuel type.                                                     
+TOPOGRAPHYCODE: Code describing the topography or physical land characteristics of the property.                
+DEEDLASTSALEDATE: Date of the most recent recorded deed sale or transfer.                                         
+DEEDLASTSALEPRICE: Sale price associated with the most recent recorded deed sale.                                  
+ASSESSORLASTSALEDATE: Date of the most recent sale recorded in assessor data.                                        
+ASSESSORLASTSALEAMOUNT: Sale amount associated with the most recent assessor-recorded sale.                             
+ASSESSORPRIORSALEDATE: Date of the prior sale recorded in assessor data.                                               
+ASSESSORPRIORSALEAMOUNT: Sale amount associated with the prior assessor-recorded sale.                                   
+LASTOWNERSHIPTRANSFERDATE: Date of the most recent ownership transfer.                                                     
+POOL: Indicator for whether the property has a pool.                                                  
+POOLAREA: Area of the pool, if reported.                                                                  
+POOLHOUSEAREA: Area of the pool house, if reported.                                                            
+PARKINGGARAGE: Indicator or category for whether the property has garage parking.                              
+PARKINGGARAGEAREA: Area of garage parking, if reported.                                                            
+PARKINGCARPORT: Indicator or category for whether the property has a carport.                                   
+PARKINGSPACECOUNT: Number of parking spaces reported for the property.                                             
+FIREPLACE: Indicator for whether the property has a fireplace.                                             
+FIREPLACECOUNT: Number of fireplaces reported for the property.                                                 
+SPRINKLERSFLAG: Indicator for whether the property has sprinklers.                                              
+
+
