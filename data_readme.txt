@@ -61,8 +61,7 @@ This dataset is used in the project to reconstruct individual customer water and
  duval_county_tax_rate_sewer: Applicable Duval County tax rate for sewer service. 
 
 data/raw/dewey/dewey_jea_service_area.dta: 
-This dataset contains parcel-level property assessment and housing characteristic data for properties located in the Florida counties served entirely or in part by JEA: Duval, Clay, St. Johns, and Nassau. The data come from Dewey property records and reflect property assessment, ownership, tax, sale, and structural characteristics from year 2023 to 2025
-
+This dataset contains parcel-level property assessment and housing characteristic data for properties located in the Florida counties served entirely or in part by JEA: Duval, Clay, St. Johns, and Nassau. The data come from Dewey property records and reflect property assessment, ownership, tax, sale, and structural characteristics from year 2023 to 2025. 
 This dataset is used in the project to obtain key property and household-relevant characteristics for the JEA sample. These include location, market value, assessed value, tax burden, tax delinquency, owner occupancy, exemptions, housing size, housing age, HVAC characteristics, and amenities. County is identified using SITUSSTATECOUNTYFIPS. 
 
 LATITUDE: Latitude of the property location.                                            
@@ -135,4 +134,50 @@ FIREPLACE: Indicator for whether the property has a fireplace.
 FIREPLACECOUNT: Number of fireplaces reported for the property.                                                 
 SPRINKLERSFLAG: Indicator for whether the property has sprinklers.                                              
 
+data/intermediate/JEA/monthly_electricity_bill_data_nonpii.parquet:
+This dataset contains monthly electricity consumption and bill amount data at the household level for JEA customers from 2019 until 2026. We use this dataset to measure consumption, and billing for all customers. Combining this with rates data we can reconstruct bills. Each customer is identified by their account id, and the service point id. The variables in this dataset are the same as in the water and wastewater dataset.
 
+data/intermediate/JEA/monthly_wastewater_bill_data_nonpii.parquet:
+This dataset contains monthly wastewater consumption and bill amount data at the household level for JEA customers from 2019 until 2026. We use this dataset to measure consumption, and billing for all customers. Each customer is identified by their account id, and the service point id. The variables in this dataset are the same as in the water and electricity dataset.
+
+data/intermediate/JEA/monthly_water_bill_data_nonpii.parquet:
+This dataset contains monthly water consumption and bill amount data at the household level for JEA customers from 2019 until 2026. We use this dataset to measure consumption, and billing for all customers. Each customer is identified by their account id, and the service point id. The variables in this dataset are the same as in the electricity and wastewater dataset.
+
+bill_date: Date the utility bill was issued.
+SERVICE_POINT_ID: Unique identifier for the service point where utility service is delivered.
+ACCOUNT_ID: Unique identifier for the customer account associated with the bill.
+CITY: City for the service location.
+ZIP_CODE: ZIP code for the service location.
+bill_period_start: First day of the the bill.
+bill_period_end: Last day of the bill.
+BILL_AMOUNT: Total dollar amount charged on the bill for the billing period.
+CONSUMPTION: Total electricity consumption during the billing period, measured in kWh.
+RATE_CODE: Utility rate code applied to the account for the billing period.
+RATE_CLASS: Descriptive rate class associated with the rate code.
+DWELLING_TYPE: Coded dwelling type associated with the service location.
+DWELLING_TYPE_DESC: Descriptive dwelling type associated with the service location.
+
+data/raw/JEA/PRR-J016546-Household_Residential_Electric_Disconnects_Non-Pay.csv:
+This data set contains disconnections from service from JEA. Each customer is identified by their account id, and we only observe the date of disconnections.
+
+data/intermediate/JEA/aging_report_nonpii.parquet:
+This dataset contains information on arrears on payments by JEA customers. We observe whether the debt is owed for the electricity bill, water bill or wastewater bill. We can use this dataset to see payment behavior. 
+
+Acct_ID: Unique identifier for the customer account.
+Cust_Cl_Cd: Customer class code indicating the type of customer (e.g., residential, commercial).
+Service Agreement Type Group: Broad category of the service agreement (e.g., electric, water).
+Service Agreement Type: Utility service agreement code associated with the account.
+Service Agreement Type Description: Descriptive name of the utility service agreement type.
+Acct_Bal: Total outstanding account balance at the time of the snapshot.
+Less_than_30: Portion of the outstanding account balance that is less than 30 days past due.
+30_to_60: Portion of the outstanding account balance that is between 30 and 60 days past due.
+60_to_90: Portion of the outstanding account balance that is between 60 and 90 days past due.
+90_to_120: Portion of the outstanding account balance that is between 90 and 120 days past due.
+120_to_150: Portion of the outstanding account balance that is between 120 and 150 days past due.
+150_to_180: Portion of the outstanding account balance that is between 150 and 180 days past due.
+Greater_Than_180: Portion of the outstanding account balance that is more than 180 days past due.
+
+data/intermediate/JEA/elec_df_agg.parquet:
+This dataset comes from using monthly_electricity_bill_data_nonpii.parquet and aggregating duplicated observations. Every observation that has the same values for account id, service point id, bill period start and end, and same bill amount, are aggregated and their consumption is summed. Variables of this dataset are the same as the ones in monthly_electricity_bill_data_nonpii.parquet, with one extra variable:
+
+n_rows_aggregated: Number of rows that were aggregated into this one row (by adding their consumption)
